@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Auction System</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <style>
+        /* Add to existing style.css */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .features {
+                flex-direction: column;
+            }
+
+            .feature {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: #0056b3;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 300px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+
+        .align-center {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Online Auction System</h1>
+    <nav>
+        <a href="http://localhost:8080/auction/auctions" class="nav-link">View Auctions</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Welcome to the Online Auction Platform</h1>
+    <p>Bid on unique items and win amazing deals from the comfort of your home. Join thousands of satisfied bidders
+        today!</p>
+    <a href="${pageContext.request.contextPath}/auctions" class="cta-button">Browse Active Auctions</a>
+</div>
+
+<div class="features">
+    <div class="feature">
+        <div class="feature-icon">🕒</div>
+        <h3>Real-time Bidding</h3>
+        <p>Experience live bidding with instant updates as bids are placed.</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">⏱️</div>
+        <h3>Countdown Timers</h3>
+        <p>Never miss an auction end with our live countdown timers.</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure Platform</h3>
+        <p>Your transactions are protected with industry-standard security.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="align-center">
+        <p>Developed By <a href="https://github.com/UpekHansaja" target="_blank">Upek Hansaja</a> | &copy; 2025 Java
+            Institute. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
