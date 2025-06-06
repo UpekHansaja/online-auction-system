@@ -19,12 +19,11 @@ import java.util.concurrent.ConcurrentMap;
 @Singleton
 @Startup
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)
-@Local(AuctionService.class)  // Add this if not present
+@Local(AuctionService.class)
 public class AuctionServiceImpl implements AuctionService {
 
     private final ConcurrentMap<String, Auction> auctions = new ConcurrentHashMap<>();
 
-    // JMS Resources
     @Resource(lookup = "jms/AuctionConnectionFactory")
     private ConnectionFactory connectionFactory;
 
@@ -76,7 +75,7 @@ public class AuctionServiceImpl implements AuctionService {
                     LocalDateTime.now(),
                     auction.getEndTime()
             );
-            // Format into days/hours/minutes/seconds
+            // Format seconds into days/ hours/ minutes/ seconds
             long days = seconds / 86400;
             seconds %= 86400;
             long hours = seconds / 3600;

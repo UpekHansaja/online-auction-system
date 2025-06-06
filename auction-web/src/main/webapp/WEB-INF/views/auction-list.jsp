@@ -14,8 +14,10 @@
         <p><%= auction.getDescription() %>
         </p>
         <div class="auction-info">
-            <span class="current-bid">Current Bid: $<%= auction.getCurrentBid() %></span>
-            <span class="time-left" data-end="<%= auction.getEndTime() %>"></span>
+            <p class="current-bid">Current Bid: <%= auction.getCurrentBid() %> LKR</p>
+            <p class="time-left">
+                <span class=" align-right" data-end="<%= auction.getEndTime() %>"></span>
+            </p>
         </div>
     </div>
     <% } %>

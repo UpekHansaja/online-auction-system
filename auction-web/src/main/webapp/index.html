@@ -6,26 +6,16 @@
     <title>Online Auction System</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <style>
-        /* Add to existing style.css */
+        * {
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+        }
+
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
         }
 
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -107,9 +97,9 @@
 </head>
 <body>
 <header>
-    <h1>Online Auction System</h1>
+    <h1>Place it Win it</h1>
     <nav>
-        <a href="http://localhost:8080/auction/auctions" class="nav-link">View Auctions</a>
+        <a href="http://localhost:8080/auction/auctions" class="">View Auctions</a>
     </nav>
 </header>
 
@@ -117,7 +107,7 @@
     <h1>Welcome to the Online Auction Platform</h1>
     <p>Bid on unique items and win amazing deals from the comfort of your home. Join thousands of satisfied bidders
         today!</p>
-    <a href="${pageContext.request.contextPath}/auctions" class="cta-button">Browse Active Auctions</a>
+    <a href="http://localhost:8080/auction/auctions" class="cta-button">Browse Active Auctions</a>
 </div>
 
 <div class="features">

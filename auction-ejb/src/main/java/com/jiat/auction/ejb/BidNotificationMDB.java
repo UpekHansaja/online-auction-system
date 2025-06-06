@@ -23,7 +23,9 @@ public class BidNotificationMDB implements MessageListener {
                 ObjectMessage objectMessage = (ObjectMessage) message;
                 Bid bid = (Bid) objectMessage.getObject();
                 System.out.println("Received bid: " + bid.getAmount() + " for auction: " + bid.getAuctionId());
-                // Here you would typically broadcast the bid to connected clients
+
+                // Broadcast the bid to all clients using a WebSocket if needed.
+
             }
         } catch (JMSException e) {
             e.printStackTrace();

@@ -1,4 +1,3 @@
-// auction-web/src/main/java/com/jiat/auction/rest/AuctionResource.java
 package com.jiat.auction.rest;
 
 import com.jiat.auction.ejb.AuctionService;
@@ -18,13 +17,8 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class AuctionResource {
 
-    // Option 1: Simple injection without explicit lookup
     @EJB
     private AuctionService auctionService;
-
-    // Option 2: If you need explicit lookup, use the correct JNDI name
-    // @EJB(lookup = "java:global/auction-ear-1.0.0/auction-ejb-1.0.0/AuctionServiceImpl")
-    // private AuctionService auctionService;
 
     @GET
     public List<Auction> getActiveAuctions() {

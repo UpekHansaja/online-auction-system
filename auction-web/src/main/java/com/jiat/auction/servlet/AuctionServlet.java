@@ -27,13 +27,14 @@ public class AuctionServlet extends HttpServlet {
         String path = request.getRequestURI().substring(request.getContextPath().length());
 
         if ("/auctions".equals(path)) {
-            // List all auctions
+            // Obtain a List all Auctions
             List<Auction> auctions = auctionService.getActiveAuctions();
             request.setAttribute("auctions", auctions);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/auction-list.jsp");
             dispatcher.forward(request, response);
+
         } else if (path.startsWith("/auctions/")) {
-            // Show single auction
+            // Show a single auction
             String auctionId = path.substring("/auctions/".length());
             Auction auction = auctionService.getAuctionById(auctionId);
             if (auction != null) {

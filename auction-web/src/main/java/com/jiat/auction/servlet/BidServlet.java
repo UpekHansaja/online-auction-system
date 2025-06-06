@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @WebServlet("/bids")
 public class BidServlet extends HttpServlet {
 
-//    @EJB(lookup = "java:global/auction-ear/auction-ejb/AuctionServiceImpl!com.jiat.auction.ejb.AuctionService")
     @EJB
     private AuctionService auctionService;
 

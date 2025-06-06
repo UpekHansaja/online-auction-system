@@ -1,4 +1,3 @@
-<!-- auction-common/pom.xml -->
 <project>
     <parent>
         <groupId>com.jiat.auction</groupId>

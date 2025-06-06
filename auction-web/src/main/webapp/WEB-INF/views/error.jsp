@@ -9,10 +9,10 @@
 <body>
 <div class="container">
     <h1>Error</h1>
-    <p>Sorry, an error occurred while processing your request.</p>
-    <p>Error Code: ${errorCode}</p>
-    <p>Error Message: ${errorMessage}</p>
-    <a href="${pageContext.request.contextPath}/home">Return to Home</a>
+    <p>Sorry, The Auction you are looking for does not exist or has been removed.</p>
+    <br>
+    <br>
+    <a href="${pageContext.request.contextPath}/">Return to Home</a>
 </div>
 </body>
 </html>
