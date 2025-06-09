@@ -7,13 +7,11 @@
 
     <display-name>Auction Web Application</display-name>
 
-    <!-- Welcome file list -->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Error pages -->
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/views/error.jsp</location>
@@ -24,7 +22,6 @@
         <location>/WEB-INF/views/error.jsp</location>
     </error-page>
 
-    <!-- Session configuration -->
     <session-config>
         <session-timeout>60</session-timeout>
         <cookie-config>
@@ -33,7 +30,6 @@
         </cookie-config>
     </session-config>
 
-    <!-- MIME type mappings for modern web assets -->
     <mime-mapping>
         <extension>js</extension>
         <mime-type>application/javascript</mime-type>
