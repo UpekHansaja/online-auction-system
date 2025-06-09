@@ -1,6 +1,7 @@
 package com.jiat.auction.ejb;
 
 import com.jiat.auction.model.Bid;
+import com.jiat.auction.websocket.AuctionEndpoint;
 import jakarta.ejb.ActivationConfigProperty;
 import jakarta.ejb.MessageDriven;
 import jakarta.jms.JMSException;
@@ -22,12 +23,20 @@ public class BidNotificationMDB implements MessageListener {
             if (message instanceof ObjectMessage) {
                 ObjectMessage objectMessage = (ObjectMessage) message;
                 Bid bid = (Bid) objectMessage.getObject();
-                System.out.println("Received bid: " + bid.getAmount() + " for auction: " + bid.getAuctionId());
 
-                // Broadcast the bid to all clients using a WebSocket if needed.
+                System.out.println("Received bid: $" + bid.getAmount() +
+                        " for auction: " + bid.getAuctionId() +
+                        " from user: " + bid.getUserId());
 
+                // Broadcast the bid to all connected WebSocket clients.
+                AuctionEndpoint.broadcastBidUpdate(bid.getAuctionId(), bid);
+
+                System.out.println("Broadcasted bid update to " +
+                        AuctionEndpoint.getConnectedClientsCount(bid.getAuctionId()) +
+                        " connected clients");
             }
         } catch (JMSException e) {
+            System.err.println("Error processing bid notification: " + e.getMessage());
             e.printStackTrace();
         }
     }

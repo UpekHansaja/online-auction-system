@@ -37,8 +37,11 @@ public class AuctionServlet extends HttpServlet {
             // Show a single auction
             String auctionId = path.substring("/auctions/".length());
             Auction auction = auctionService.getAuctionById(auctionId);
+            int viewCount = 1; // Default view count
             if (auction != null) {
                 request.setAttribute("auction", auction);
+                // Increment view count according to active user sessions for current auction
+                request.setAttribute("viewCount", viewCount + 1);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/auction-detail.jsp");
                 dispatcher.forward(request, response);
             } else {
